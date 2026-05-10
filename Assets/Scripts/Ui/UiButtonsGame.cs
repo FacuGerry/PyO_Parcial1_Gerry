@@ -4,26 +4,22 @@ using UnityEngine.UI;
 
 public class UiButtonsGame : MonoBehaviour
 {
-    public static event Action OnButtonGamePressed;
-    public static event Action OnButtonCreditsPressed;
-    public static event Action OnButtonAdsPressed;
+    public event Action OnButtonGamePressed;
+    public event Action OnButtonCreditsPressed;
 
     [SerializeField] private Button _btnGame;
     [SerializeField] private Button _btnCredits;
-    //[SerializeField] private Button _btnAds;
 
     private void Start()
     {
         _btnGame.onClick.AddListener(ButtonGameClicked);
         _btnCredits.onClick.AddListener(CreditsClicked);
-        //_btnAds.onClick.AddListener(AdsClicked);
     }
 
     private void OnDestroy()
     {
         _btnGame.onClick.RemoveAllListeners();
         _btnCredits.onClick.RemoveAllListeners();
-        //_btnAds.onClick.RemoveAllListeners();
     }
 
     private void ButtonGameClicked()
@@ -34,10 +30,5 @@ public class UiButtonsGame : MonoBehaviour
     private void CreditsClicked()
     {
         OnButtonCreditsPressed?.Invoke();
-    }
-
-    private void AdsClicked()
-    {
-        OnButtonAdsPressed?.Invoke();
     }
 }

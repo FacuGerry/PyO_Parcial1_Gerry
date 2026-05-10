@@ -1,14 +1,19 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public static event Action<float> OnTimeUpdated;
-    public static event Action<int> OnPressesUpdated;
-    public static event Action<int> OnHighScoreUpdated;
-
     [SerializeField] private GameDataSO _data;
+    [SerializeField] private float _timeToAdd;
+
+    [Header("UI")]
+    [SerializeField] private UiButtonsGame _buttons;
+    [SerializeField] private UiTextPresses _text;
+
+    [Header("ADS")]
+    [SerializeField] private AdsRewarded _rewarded;
+    [SerializeField] private AdsInterstitial _interstitial;
+
     private int _presses = 0;
     private float _timer = 0f;
 
@@ -19,16 +24,18 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        OnPressesUpdated?.Invoke(_presses);
+        _text.UpdatePresses(_presses);
         _timer = _data.gameTime;
-        OnTimeUpdated?.Invoke(_timer);
+        _text.UpdateTime(_timer);
         _canBePlayed = true;
-        OnHighScoreUpdated?.Invoke(_data.highScore);
+        _text.UpdateHighScore(_data.highScore);
     }
 
     private void OnEnable()
     {
-        UiButtonsGame.OnButtonGamePressed += ButtonPressed;
+        _buttons.OnButtonGamePressed += ButtonPressed;
+
+        _rewarded.OnAdPlayed += OnAdPlayed_AddTime;
     }
 
     private void Update()
@@ -44,13 +51,15 @@ public class GameController : MonoBehaviour
                 _coroutine = WaitingForNextGame();
                 StartCoroutine(_coroutine);
             }
-            OnTimeUpdated?.Invoke(_timer);
+            _text.UpdateTime(_timer);
         }
     }
 
     private void OnDisable()
     {
-        UiButtonsGame.OnButtonGamePressed -= ButtonPressed;
+        _buttons.OnButtonGamePressed -= ButtonPressed;
+
+        _rewarded.OnAdPlayed -= OnAdPlayed_AddTime;
     }
 
     private IEnumerator WaitingForNextGame()
@@ -62,17 +71,19 @@ public class GameController : MonoBehaviour
         if (_presses > _data.highScore)
         {
             _data.highScore = _presses;
-            OnHighScoreUpdated?.Invoke(_data.highScore);
+            _text.UpdateHighScore(_data.highScore);
         }
+        else
+            _interstitial.ShowAd();
 
         _presses = 0;
 
         _isRunning = false;
 
         yield return new WaitForSeconds(2f);
-        OnPressesUpdated?.Invoke(_presses);
-
+        _text.UpdatePresses(_presses);
         _canBePlayed = true;
+        _rewarded.OnNewGame_ShowAddButton();
 
         yield return null;
     }
@@ -84,6 +95,12 @@ public class GameController : MonoBehaviour
 
         _presses++;
         _isRunning = true;
-        OnPressesUpdated?.Invoke(_presses);
+        _text.UpdatePresses(_presses);
+    }
+
+    private void OnAdPlayed_AddTime()
+    {
+        _timer += _timeToAdd;
+        _text.UpdateTime(_timer);
     }
 }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097849e0b9d32c14bac5ae4fe53bc867, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: Assembly-CSharp::GameDataSO
-  highScore: 89
+  highScore: 0
   gameTime: 10
