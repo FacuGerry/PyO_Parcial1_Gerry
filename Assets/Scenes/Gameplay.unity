@@ -299,6 +299,10 @@ PrefabInstance:
       value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 629468873530683870, guid: c0dc6236c03ce474080aec3a3196cbfa, type: 3}
+      propertyPath: m_fontSizeMin
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 629468873530683870, guid: c0dc6236c03ce474080aec3a3196cbfa, type: 3}
       propertyPath: m_fontSizeBase
       value: 35
       objectReference: {fileID: 0}
@@ -380,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3357014893879462680, guid: c0dc6236c03ce474080aec3a3196cbfa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3357014893879462680, guid: c0dc6236c03ce474080aec3a3196cbfa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -558,6 +562,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190409546}
   m_CullTransparentMesh: 1
+--- !u!1 &209524074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209524076}
+  - component: {fileID: 209524075}
+  m_Layer: 0
+  m_Name: Interstitial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &209524075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209524074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92eb1369e039b5444a43dd68fb216b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InterstitialManager
+  _androidAdUnitId: Interstitial_Android
+--- !u!4 &209524076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209524074}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1436124332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471580951
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +783,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &582450961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 582450963}
+  - component: {fileID: 582450962}
+  m_Layer: 0
+  m_Name: Rewarded
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &582450962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582450961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712844f2253758e46be9f3cc67bc912c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RewardedAdManager
+  _androidAdUnitId: Rewarded_Android
+--- !u!4 &582450963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582450961}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1436124332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &624171005
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,8 +862,8 @@ MonoBehaviour:
   _timeToAdd: 2
   _buttons: {fileID: 1805124721}
   _text: {fileID: 1805124722}
-  _rewarded: {fileID: 1436124334}
-  _interstitial: {fileID: 1436124333}
+  _rewarded: {fileID: 582450962}
+  _interstitial: {fileID: 209524075}
 --- !u!4 &624171007
 Transform:
   m_ObjectHideFlags: 0
@@ -794,9 +888,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 624171005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edb0f8559db4396489069493d4428120, type: 3}
+  m_Script: {fileID: 11500000, guid: 0069dd6b76cc10e478b6dc143e6b9d66, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ResolutionController
+  m_EditorClassIdentifier: Assembly-CSharp::LocalNotisManager
 --- !u!1 &800913046
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +903,7 @@ GameObject:
   - component: {fileID: 800913050}
   - component: {fileID: 800913049}
   - component: {fileID: 800913048}
+  - component: {fileID: 800913051}
   m_Layer: 5
   m_Name: ButtonAd
   m_TagString: Untagged
@@ -878,7 +973,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 800913049}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 582450962}
+        m_TargetAssemblyTypeName: RewardedAdManager, Assembly-CSharp
+        m_MethodName: ShowRewardedAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &800913049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,6 +1024,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800913046}
   m_CullTransparentMesh: 1
+--- !u!114 &800913051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800913046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a941d229ce1efc14389f7922dd371d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RewardedAdButton
+  theButton: {fileID: 800913048}
+  ad: {fileID: 582450962}
 --- !u!1 &814285505
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1117,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814285505}
   m_CullTransparentMesh: 1
+--- !u!1 &864949919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 864949921}
+  - component: {fileID: 864949920}
+  m_Layer: 0
+  m_Name: Banner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &864949920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864949919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ea94934c4aa0440bcf71cecfef022b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BannerManager
+  _androidAdUnitId: Banner_Android
+--- !u!4 &864949921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864949919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1436124332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &880632379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,10 +1984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1436124332}
-  - component: {fileID: 1436124331}
-  - component: {fileID: 1436124330}
   - component: {fileID: 1436124333}
-  - component: {fileID: 1436124334}
   m_Layer: 0
   m_Name: AdsManager
   m_TagString: Untagged
@@ -1829,34 +1992,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1436124330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436124329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c910f67ea922784685f71c1ed155826, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AdsBanner
-  _bannerPosition: 1
-  _androidAdUnitId: Banner_Android
---- !u!114 &1436124331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436124329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 247a7406713a73a4480e91f15bb37268, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AdsInitializer
-  _androidGameId: 6104391
-  _testMode: 1
 --- !u!4 &1436124332
 Transform:
   m_ObjectHideFlags: 0
@@ -1869,7 +2004,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 864949921}
+  - {fileID: 209524076}
+  - {fileID: 582450963}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1436124333
@@ -1881,24 +2019,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1436124329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10949fe9717460049872f53931c77844, type: 3}
+  m_Script: {fileID: 11500000, guid: bb6d633e9ece8624780fbd092fec8f01, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AdsInterstitial
-  _androidAdUnitId: Interstitial_Android
---- !u!114 &1436124334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436124329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e638443b74a617044a017ad7e6152a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AdsRewarded
-  _showAdButton: {fileID: 800913048}
-  _androidAdUnitId: Rewarded_Android
+  m_EditorClassIdentifier: Assembly-CSharp::AdsManager
+  isTestMode: 1
+  banner: {fileID: 864949920}
+  interstitial: {fileID: 209524075}
+  rewardedAd: {fileID: 582450962}
 --- !u!1001 &1437397647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2437,7 +2564,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 620942988778956675, guid: d0b54ac22de6011469e073e3b66a7e4f, type: 3}
       propertyPath: m_Alpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 620942988778956675, guid: d0b54ac22de6011469e073e3b66a7e4f, type: 3}
       propertyPath: m_Interactable
@@ -2787,6 +2914,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1866121810}
     m_Modifications:
+    - target: {fileID: 629468873530683870, guid: c0dc6236c03ce474080aec3a3196cbfa, type: 3}
+      propertyPath: m_fontSize
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 3357014893879462680, guid: c0dc6236c03ce474080aec3a3196cbfa, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

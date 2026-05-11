@@ -11,8 +11,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private UiTextPresses _text;
 
     [Header("ADS")]
-    [SerializeField] private AdsRewarded _rewarded;
-    [SerializeField] private AdsInterstitial _interstitial;
+    [SerializeField] private RewardedAdManager _rewarded;
+    [SerializeField] private InterstitialManager _interstitial;
 
     private int _presses = 0;
     private float _timer = 0f;
@@ -74,7 +74,7 @@ public class GameController : MonoBehaviour
             _text.UpdateHighScore(_data.highScore);
         }
         else
-            _interstitial.ShowAd();
+            _interstitial.ShowInterstitial();
 
         _presses = 0;
 
@@ -83,7 +83,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         _text.UpdatePresses(_presses);
         _canBePlayed = true;
-        _rewarded.OnNewGame_ShowAddButton();
+        _rewarded.ShowAdButton();
 
         yield return null;
     }

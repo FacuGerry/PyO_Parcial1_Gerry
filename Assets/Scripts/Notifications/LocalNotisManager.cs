@@ -6,6 +6,10 @@ public class LocalNotisManager : MonoBehaviour
 {
     private static string CHANNEL_ID = "notis01";
 
+    private void Awake()
+    {
+    }
+
     private void Start()
     {
         //Creo los Notification Channels, una única vez.
