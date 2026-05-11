@@ -607,6 +607,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1436124332}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &297127695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 297127697}
+  - component: {fileID: 297127696}
+  m_Layer: 0
+  m_Name: Notifications
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &297127696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297127695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0069dd6b76cc10e478b6dc143e6b9d66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalNotisManager
+--- !u!4 &297127697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297127695}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471580951
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +882,6 @@ GameObject:
   m_Component:
   - component: {fileID: 624171007}
   - component: {fileID: 624171006}
-  - component: {fileID: 624171008}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -879,18 +922,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &624171008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624171005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0069dd6b76cc10e478b6dc143e6b9d66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalNotisManager
 --- !u!1 &800913046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,7 +2595,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 620942988778956675, guid: d0b54ac22de6011469e073e3b66a7e4f, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 620942988778956675, guid: d0b54ac22de6011469e073e3b66a7e4f, type: 3}
       propertyPath: m_Interactable
@@ -3142,6 +3173,7 @@ SceneRoots:
   - {fileID: 12009650}
   - {fileID: 519420032}
   - {fileID: 624171007}
+  - {fileID: 297127697}
   - {fileID: 1436124332}
   - {fileID: 4679989667501634466}
   - {fileID: 1214194100}

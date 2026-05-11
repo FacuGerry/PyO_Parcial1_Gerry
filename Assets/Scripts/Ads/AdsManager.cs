@@ -14,9 +14,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener
     {
 #if UNITY_ANDROID
         _gameId = "6104391";
-#elif UNITY_EDITOR
-        _gameId = "6104391";
-#else
+#elif UNITY_WEBGL
         Destroy(gameObject);
 #endif
 
